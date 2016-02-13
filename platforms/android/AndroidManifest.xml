@@ -1,0 +1,3 @@
+<manifest android:hardwareAccelerated="true" android:versionCode="1" android:versionName="1.0.0" android:windowSoftInputMode="adjustPan" package="com.gestoolsasp.inmadeira" xmlns:android="http://schemas.android.com/apk/res/android">
+
+</manifest>
