@@ -1,7 +1,7 @@
 var maxStep = 7, gvToken = "";
 var gvEntity      = "fpadres";
 var gvUser        = "pfernandes";
-var gvPassword    = "faja";
+var gvPassword    = "";
 var gvIsoLingua   = "PT";
 var gvIdServico   = 108;//86";//
 var gvBtnDiaS     = null;
@@ -109,6 +109,8 @@ function step1_process(data) {
         document.getElementById('step1td').innerHTML = 'user ' + data.d;
         //document.getElementById("step_2").style.visibility = 'visible';
         gvToken = data.d;
+
+        window.localStorage.setItem("password", gvPassword);
 
         doCall("timetable.asmx", "ListWeek", "ServiceId:" + gvIdServico + ", ProductCode:''", step4_process);
 
