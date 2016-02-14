@@ -51,8 +51,8 @@
 					</tr>
 					<tr id="trAreaLogin">
 						<td class="areaLogin" valign="middle">
-							<input type="password" class="tb" value="">
-							<input type="button" class="btn" onclick="gvPassword=document.getElementById('password').value; step1();" value="LOGIN"/>
+							<input type="password" id="password" class="tb" value="">
+							<input type="button" class="btn" onclick="step1();" value="LOGIN"/>
 							<div id="step1td" style="display:none"></div>
 						</td>
 					</tr>
@@ -103,10 +103,10 @@
 
             var value = window.localStorage.getItem("password");
             if ((value != null) && (value != "")) {
+                document.getElementById('password').value = value;
                 gvPassword = value;
                 step1();
             }
-
         </script>
     </body>
 </html>

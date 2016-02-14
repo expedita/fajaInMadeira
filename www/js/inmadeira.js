@@ -96,6 +96,7 @@ function setStepState(pStep) {
 
 //login to user in entity demo -----------------------------------------------
 function step1() {
+    gvPassword = document.getElementById('password').value;
     doCall('authentication.asmx', 'login', 'Entity:\'' + gvEntity + '\', User:\'' + gvUser + '\', Password:\'' + gvPassword + '\'', step1_process);
     /*
     for (j = 2; j <= maxStep; j++) {
