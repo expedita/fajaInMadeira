@@ -2,6 +2,34 @@
     margin: 0px;
 }
 
+.blockUIText{
+    display:inline-box;
+    padding:10px;
+    border-radius:5px;
+    background-color:white;
+    color:green;
+    font-weight:bold;
+    font-size:12pt;
+}
+
+.blockUIText .subtext{
+    color: rgba(36, 137, 206, 1);
+    font-weight:bold;
+    font-size:10pt;
+}
+
+.centrar{
+	display: flex;
+	justify-content: center;    
+	align-items: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	-webkit-flex-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+}
+
 .mainForm {
     margin: 2px;
     text-align: center;
@@ -9,11 +37,13 @@
     border: silver 1px solid;
     border-radius: 5px;
     padding: 2px 10px 10px 10px;
+    background-color: #FFF;
 }
 
 .mainForm table tr .areaHeaderForm{
     padding: 0px;
     text-align: center;
+    border-bottom: #685635 3px double;
 }
 
 .mainForm table tr .areaLogin{
@@ -39,13 +69,14 @@
     text-align: center;
     background-color: #45ADDC;
     font-weight: bold;
+    cursor:pointer;
 }
 
 .mainForm table tr .areaHeader{
     padding: 0px;
-    border-bottom: #80661D 1px solid;
+    border-bottom: rgba(36, 137, 206, 1) 1px solid;
     text-align: left;
-    color: #80661D;
+    color: rgba(36, 137, 206, 1);
     font-size: 14pt;
     font-weight: bold;
 }
@@ -60,7 +91,7 @@
 }
 
 .header {
-    text-align: center;
+    float: left;
     margin: 1px;
     display:inline-block;
     width: 200px;
@@ -69,6 +100,16 @@
     background-position: 0px 0px;
     background-repeat:no-repeat;
 }
+
+.subHeader{
+    width: 94%;
+    padding: 4px 0px 4px 0px;
+    text-align: center;
+    color: rgba(36, 137, 206, 1);
+    font-size: 14pt;
+    font-weight: bold;
+}
+
 
 .dias {
     width: 100%;
@@ -86,18 +127,6 @@
     border: silver 1px outset;
     cursor:pointer;
     font-weight:bold;
-
-	display: flex;
-	justify-content: center;    
-	align-items: center;
-	
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	-webkit-flex-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
 }
 
 .divDiaHoje .ds font{
@@ -107,7 +136,7 @@
 
 .divDiaHoje:hover .ds font{
     font-size:14pt;
-    color:#84BB11;
+    color: #BFD204;
 }
 
 .diaHojeDisabled {
@@ -123,19 +152,20 @@
 }
 
 .diaHojeNotSelected {
-    background-color:#80661D;
+    background-color:rgba(36, 137, 206, 1);
     color:#FFDD77;
 }
 
 .diaHojeSelected {
     border: silver 1px inset;
-    background-color:#DFF500;
-    color:#018801;
+    background-color:rgba(39, 154, 169, 1);
+    color:rgba(255, 255, 255, 1);
 }
 
 .diaHojeNotSelected:hover{
-    background-color:#ECD386;
-    color:#D6A000;
+    background-color: #F1D47D;
+    color: #FFEB3E;
+    border: #FFE500 1px outset;
 }
 
 .diaHojeNotSelected:active{
@@ -152,33 +182,28 @@
     border-radius: 5px;
     font-weight:bold;
     cursor:pointer;
-
-	display: flex;
-	justify-content: center;    
-	align-items: center;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	-webkit-flex-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
 }
 
 .diaSemanaNotSelected {
-    background-color:#FFF4D4;
-    color:#885542;
+    background-color:rgba(247, 247, 248, 1);
+    color:rgba(39, 154, 169, 1);
 }
 
 .diaFimSemanaNotSelected {
-    background-color: #FBE4A1;
-    color: #9C7F28;
+    background-color: rgba(106, 197, 239, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 .diaSemanaSelected {
     border: #ECCC9D 1px inset;
-    background-color:#DFF500;
-    color:#018801;
+    background-color:rgba(39, 154, 169, 1);
+    color:rgba(255, 255, 255, 1);
+}
+
+.diaFimSemanaSelected {
+    border: #ECCC9D 1px inset;
+    background-color:rgba(39, 154, 169, 1);
+    color:rgba(255, 255, 255, 1);
 }
 
 .diaFimSemanaNotSelected:hover, .diaSemanaNotSelected:hover{
@@ -188,12 +213,12 @@
 
 .divDiaSemana .ds font{
     font-size:9pt;
-    color:#767B44;
+    color:rgba(189, 189, 189, 1);
 }
 
 .divDiaSemana:hover .ds font{
     font-size:9pt;
-    color:#9EDE1A;
+    color:#DEF127;
 }
 
 .diaSemanaDisabled {
@@ -239,28 +264,33 @@
     border: #ADA02F 1px outset;
     cursor:pointer;
     font-weight:bold;
-
-	display: flex;
-	justify-content: center;    
-	align-items: center;
-	
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	-webkit-flex-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
 }
 
 .prodNotSelected {
-    background-color: #E4B738;
-    color: #015A05;}
+    background-color: rgba(255, 255, 255, 1);
+    color: #015A05;
+}
+
+.prodNotSelected:hover {
+    background-color: rgba(39, 154, 169, 1);
+    color: #C7D630;
+    border: #FFE500 1px outset;
+}
+
+.prodNotSelected:hover {
+    background-color: rgba(39, 154, 169, 1);
+    color: #C7D630;
+    border: #FFE500 1px outset;
+}
+.prodNotSelected:hover .pr font{
+    font-size: 12pt;
+    color: #E66E45;
+}
 
 .prodSelected {
     border: silver 1px inset;
-    background-color:#DFF500;
-    color:#018801;
+    background-color:rgba(39, 154, 169, 1);
+    color:rgba(255, 255, 255, 1);
 }
 
 .prod .pr font{
@@ -279,28 +309,16 @@
 
 .tar{
     float:  left;
-    width:  250px;
-    height: 45px;
+    width:  220px;
+    height: 20px;
     padding: 3px;
-    margin: 4px 4px 4px 0px;
+    margin: 0px 4px 4px 0px;
     border-radius: 5px;
-    font-size:14pt;
+    font-size:13pt;
     font-weight:bold;
     border: silver 1px outset;
     cursor:pointer;
     font-weight:bold;
-
-	display: flex;
-	justify-content: center;    
-	align-items: center;
-	
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	-webkit-flex-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
 }
 
 .tarNotSelected {
@@ -310,16 +328,16 @@
 
 .tarSelected {
     border: silver 1px solid;
-    background-color:#DFF500;
+    background-color:rgba(255, 255, 255, 1);
     color: #5D2B1A;
 }
 
 .tar .tb{
     border: silver 1px inset;
-    width:  100px;
-    height: 40px;
-    font-size: 18pt;
-    color: #80661D;
+    width:  50px;
+    height: 20px;
+    font-size: 12pt;
+    color: rgba(36, 137, 206, 1);
     border-radius: 5px;
 }
 
@@ -330,14 +348,541 @@
 }
 
 .btnReservar{
-    width: 150px;
-    height: 60px;
-    font-size: 14pt;
+    width: 100px;
+    height: 40px;
+    font-size: 12pt;
     color: #FFF6A3;
     border-radius: 5px;
     text-align: center;
     background-color: #45ADDC;
     font-weight: bold;
+    cursor:pointer;
 }
 
 
+.areaRes .tb{
+    float:left;
+    border: silver 1px inset;
+    margin: 0px 2px 2px 0px; 
+    height: 20px;
+    font-size: 12pt;
+    color: rgba(36, 137, 206, 1);
+    border-radius: 5px;
+    text-align:center;
+    background-color: #FFFEF5;
+}
+
+
+@media screen and (min-width: 100px) {
+    .areaRes .len1 {
+        width: 46px;
+    }
+
+    .areaRes .len2 {
+        width: 160px;
+    }
+
+    .areaRes .len3 {
+        width: 150px;
+    }
+
+    .areaRes .len4 {
+        width: 274px;
+    }
+
+    .areaRes .len5 {
+        width: 324px;
+    }
+
+    .tbw{
+        padding: 0px !important;
+        width: 328px !important;
+        margin: 0px !important;
+        float: left;
+    }
+
+}
+
+@media screen and (min-width: 346px){
+    .areaRes .len1 {
+        width: 46px;
+    }
+
+    .areaRes .len2 {
+        width: 105px;
+    }
+
+    .areaRes .len3 {
+        width: 150px;
+    }
+
+    .areaRes .len4 {
+        width: 168px;
+    }
+
+    .areaRes .len5 {
+        width: 218px;
+    }
+
+    .tbw{
+        padding: 0px !important;
+        width: 222px !important;
+        margin: 0px !important;
+        float: left;
+    }
+
+}
+
+@media screen and (min-width: 459px) {
+    .areaRes .len1 {
+        width: 46px;
+    }
+
+    .areaRes .len2 {
+        width: 95px;
+    }
+
+    .areaRes .len3 {
+    width: 150px;
+    }
+
+    .areaRes .len4 {
+        width: 168px;
+    }
+
+    .areaRes .len5 {
+        width: 218px;
+    }
+
+    .tbw{
+        padding: 0px !important;
+        width: 198px !important;
+        margin: 0px !important;
+        float: left;
+    }
+
+}
+
+.nofloat{
+    float:left !important;
+}
+
+.tbw input{
+    display: inline-block !important;
+    float: none !important;
+}
+
+.modsPag {
+    width: 100%;
+    margin: 2px;
+}
+
+.divModPag{
+    float:  left;
+    width:  100px;
+    height: 48px;
+    margin: 0px 4px 4px 0px;
+    border: #ECCC9D 1px outset;
+    border-radius: 5px;
+    font-weight:bold;
+    cursor:pointer;
+    text-align: center;
+}
+
+.modPagNotSelected {
+    background-color:#FFE9A8;
+    color:#885542;
+}
+
+.modPagSelected {
+    border: #ECCC9D 1px inset;
+    background-color:rgba(255, 255, 255, 1);
+    color:#018801;
+}
+
+.modPagNotSelected:hover{
+    background-color:#FBF4B9;
+    color:#D4BF0C;
+}
+
+.btnConfirm{
+    width: 120px;
+    height: 31px;
+    font-size: 12pt;
+    color: #FFF6A3;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #45ADDC;
+    font-weight: bold;
+    cursor:pointer;
+    margin-top: 5px;
+}
+
+.erroReserva {
+    display: inline-block;
+    padding: 1px 02px 20px 2px;
+    color: rgba(36, 137, 206, 1);
+    font-size: 14pt;
+    font-weight: bold;}
+
+.erroReserva font {
+    font-size: 11pt;
+    color: #F44336;
+    font-weight: bold;
+}
+
+.btnImprimir_w {
+    width: 90px;
+    height: 68px;
+    border-radius: 5px;
+    text-align: center;
+    background-image: url('../../Themes/Default/icons/ico_printer.png');
+    background-repeat: no-repeat;
+    background-position-y:1px;
+    background-position-x:center;
+    background-position: top center;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    margin: 0px 4px 4px 0px;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    vertical-align: bottom;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    -webkit-flex-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: end;
+    color: rgba(36, 137, 206, 1);
+    line-height: 15px;
+}
+
+.btnImprimir {
+    border: #ECCC9D 1px outset;
+    color: rgba(36, 137, 206, 1);
+}
+
+.btnImprimir:hover {
+    border: #F5C92C 1px outset;
+    color:#E0BF49;
+}
+
+.btnImprimir div{
+    width: 90px;
+    height: 30px;
+    font-size: 11pt;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    padding:4px;
+}
+
+.btnBig {
+    width: 90px;
+    height: 68px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    margin: 0px 4px 4px 0px;
+    border-radius: 5px;
+    color: rgba(36, 137, 206, 1);
+    font-size: 12pt;
+    border: #F3CE60 1px outset;
+}
+
+
+.btnCheckin, .btnNovaReserva {
+    float: left;
+    background-color: rgba(51, 51, 51, 1);
+    color: #DEC068;
+    height: 65px;
+    border: #E6AF0B 1px outset;
+}
+
+.btnCheckin:hover, .btnNovaReserva:hover {
+    float: left;
+    background-color: #F1D47D;
+    color: #B1A432;
+    border: #FFE501 1px outset;
+}
+
+.btnCheckinTop, .btnNovaReservaTop {
+    float: right;
+    background-color: rgba(51, 51, 51, 1);
+    color: #DEC068;
+    height: 65px;
+    border: #E6AF0B 1px outset;
+}
+
+.btnCheckinTop:hover, .btnNovaReservaTop:hover {
+    float: right;
+    background-color: #F1D47D;
+    color: #B1A432;
+    border: #FFE501 1px outset;
+}
+
+.caixa{
+    border: silver 1px solid;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: #FBFBEB;
+}
+
+.dadosReserva{
+    color:rgba(36, 137, 206, 1);
+}
+
+.dadosReserva .prodDR{
+    text-align: left;
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+.dadosReserva .dataDR{
+    text-align: left;
+    padding-left: 10px;
+}
+
+.dadosReserva .TrfsDR{
+    text-align: left;
+    padding-left: 10px;
+}
+
+.dadosReserva span{
+    font-size: 10pt;
+    color: brown;
+}
+
+.dadosReserva .ValTDR{
+    text-align: left;
+}
+
+.dadosReserva .ValTDR .lbl{
+    text-align: left;
+    font-weight:bold;
+}
+
+.dadosReserva .ValTDR .val{
+    text-align: left;
+    color: brown;
+}
+
+.mainForm table tr .areaPosEmissao{
+    padding: 10px 0px 10px 0px;
+}
+
+.checkinList_w{
+border-bottom: rgba(36, 137, 206, 1) 1px solid;
+    border-radius: 4px;
+    background-color: rgba(36, 137, 206, 1);
+    display: inline-block;
+    padding: 1px;
+    width: 99%;
+}
+
+.checkboxList{
+    height: 26px;
+    width: 26px;
+    margin:1px 0px 0px 0px;
+    padding:0px;
+}
+
+.checkinList{
+    background-color: rgba(36, 137, 206, 1);
+}
+
+.checkinList .hdrL{
+    background-color: #BBA465;
+    color: #482B20;
+    font-weight: bold;
+}
+
+.checkinList .line0{
+    background-color: #FFFFDC;
+}
+
+.checkinList .line1{
+    background-color: #FFFFC9;
+}
+
+.checkinList .lineErr{
+    background-color: silver;
+    color:red;
+    font-weight:bold;
+}
+
+.checkinList .hdrL td, .checkinList .line0 td, .checkinList .line1 td{
+    padding: 1px;
+    line-height: 14px;
+    text-align: center;
+    vertical-align: center;
+    color: #8A693A;
+}
+                   
+.checkinList .line0 .blh, .checkinList .line1 .blh{
+    color:#A73613;
+    font-weight: bold;
+}
+
+.checkinList .line0 .dt, .checkinList .line1 .dt{
+    color: #7AA07C;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.checkinList .line0 .prd, .checkinList .line1 .prd{
+    color: #9C7070;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+
+
+
+.checkinList .line0 td .st_cl, .areaPosEmissao .lbl .st_cl, .areaPesq .lbl .st_cl{
+    border: #CE3429 1px solid;
+    border-radius: 20px;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.checkinList .line0 td .st_pc, .checkinList .line1 td .st_pc, .areaPosEmissao .lbl .st_pc, .areaPesq .lbl .st_pc{
+    border: #E4AD08 1px solid;
+    border-radius: 20px;
+    background-color: #FFCB6B;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.checkinList .line0 td .st_em, .checkinList .line1 td .st_em, .areaPosEmissao .lbl .st_em, .areaPesq .lbl .st_em{
+    border: #26D026 1px solid;
+    border-radius: 20px;
+    background-color: #9CE89C;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.checkinList .line0 td .st_ck, .checkinList .line1 td .st_ck , .areaPosEmissao .lbl .st_ck, .areaPesq .lbl .st_ck{
+    border: #279AA9 1px solid;
+    border-radius: 20px;
+    background-color: #6AC5EF;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.areaPosEmissao .lbl, .areaPesq .lbl{
+    float: left;
+    min-width: 60px;
+    padding-right: 15px;
+    font-size:8pt;
+    font-weight:bold;
+    color:rgba(51, 51, 51, 1);
+    justify-content:flex-start;
+}
+
+.areaPosEmissao .lbl .small, .areaPesq .lbl .small{
+    border-radius: 10px !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+
+.areaPesq .tb{
+    float:left;
+    border: silver 1px inset;
+    margin: 0px 2px 2px 0px; 
+    height: 20px;
+    font-size: 12pt;
+    color: rgba(36, 137, 206, 1);
+    border-radius: 5px;
+    text-align:center;
+    background-color: #FFFEF5;
+}
+
+@media screen and (max-width: 450px) {
+    .areaPesq .len1 {
+        width: 30%;
+    }
+
+    .areaPesq .len2 {
+        width: 33%;
+    }
+
+
+    .areaPesq .len4 {
+        width: 98%;
+    }
+}
+
+
+@media screen and (min-width: 451px) {
+   .areaPesq .len1 {
+        width: 18%;
+    }
+
+    .areaPesq .len2 {
+        width: 18%;
+    }
+
+
+    .areaPesq .len4 {
+        width: 42%;
+    }
+}
+
+.areaPesq .btnPesquisa{
+    margin-top:5px;
+    float:left;
+    width: 142px;
+    height: 33px;
+    font-size: 12pt;
+    color: #FFF6A3;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #45ADDC;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+
+.btnLong{
+    margin-top:5px;
+    float:right;
+    width: 170px;
+    height: 31px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    margin: 0px 4px 4px 0px;
+    border-radius: 5px;
+    color: rgba(36, 137, 206, 1);
+    font-size: 12pt;
+    border: #F3CE60 1px outset;
+}
+
+.areaPesq .btnLogCheckin {
+    margin-top:5px;
+    background-color: rgba(51, 51, 51, 1);
+    color: #DEC068;
+    border: #E6AF0B 1px outset;
+}
+
+.areaPesq .btnLogCheckin:hover {
+    margin-top:5px;
+    background-color: #F1D47D;
+    color: #B1A432;
+    border: #FFE501 1px outset;
+}

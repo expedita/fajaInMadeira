@@ -21,7 +21,7 @@
 -->
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="iso-8859-15" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
@@ -29,25 +29,33 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.css" />  
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+		<!-- script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script -->
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
 
 		<link href="css/inmadeira.css" rel="stylesheet" />
+    <script language="javascript" type="text/javascript" src="include/jquery/jquery-1.11.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="include/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="include/jquery/jquery-ui-1.7.2.custom.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="include/jquery/jquery.colorbox-min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="include/jquery/jquery.blockUI.js"></script>
+    <script language="javascript" type="text/javascript" src="include/prototypes.js"></script>
 		<script type="text/javascript" language="javascript" src="js/inmadeira.js" ></script>
 		
-        <title>Hello World</title>
+        <title>Fajã dos Padres</title>
     </head>
     <body>
         <div class="app">
-            <h1>PhoneGap for InMadeira</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-			 <div class="mainForm">
+			 <div id="divMainForm" class="mainForm">
 				<table width="100%" cellpadding="0px" cellspacing="0px">
 					<tr>
-						<td class="areaHeaderForm"><div class="header"></div></td>
+                 <td class="areaHeaderForm">
+                    <div class="header"></div>
+                    <div id="btnCheckinTop" class="btnBig centrar btnCheckinTop" onclick="javascript:document.location.href='./FajaBook_Checkin.htm';">LISTA</br>PARA</br>CHECKIN</div>
+                 </td>
 					</tr>
 					<tr id="trAreaLogin">
 						<td class="areaLogin" valign="middle">
@@ -57,7 +65,7 @@
 						</td>
 					</tr>
 					<tr id="trHdrDias" style="display:none">
-						<td class="areaHeader">Dia a Reservar</td>
+                 <td class="areaHeader" style="padding-top:10px !important">Dia a Reservar</td>
 					</tr>
 					<tr id="trDias" style="display:none">
 						<td class="area"><div id="divDias" class="dias"></div></td>
@@ -77,36 +85,118 @@
 						<input type="button" id="step_6" class="btnReservar" value="Reservar" onclick="javascript:step6();"/>
 					</td>
 					</tr>
-					<tr id="trHdrCli" style="display:none">
-						<td class="areaHeader">Finalizar Reserva</td>
+             <tr id="trHdrRes" style="display:none">
+                 <td class="areaHeader">Finalizar Reserva<span id="spIdReserva" style="float:right"></span></td>
 					</tr>
-					<tr id="trCli" style="display:none">
-						<td class="area" align="center">
-							<div id="step6td"></div>
-
-							<input type="text" style="float:left" placeholder="first name" id="firstName" value="" />
-							<input type="text" style="float:left" placeholder="last name" id="lastName" value="" />
-							<input type="text" style="float:left" placeholder="phone number" id="phone" value="" />
-							<input type="text" style="float:left" placeholder="email" id="email" value="" />
-							<input type="text" style="float:left" placeholder="hotel" id="hotel" value="" />
-							<input type="text" style="float:left" placeholder="room number" id="room" value="" />
-							<input type="text" style="float:left" placeholder="nationality" id="nationality" value="PT" />
-							<input type="button" id="step_7" value="STEP 7 - CONFIRM" onclick="javascript:step7();"/>
+             <tr id="trRes" style="display:none">
+                 <td class="area areaRes" align="center">
+                     <table id="detalhesReserva" cellpadding="0" cellspacing="0" width="100%" style="width:100%">
+                         <tr>
+                             <td>
+                                 <div class="subHeader">Dados da Reserva</div>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td id="tdDadosReserva" class="caixa dadosReserva">
+                                 <div id="divPrdDR" class="prodDR">**prod**</div>
+                                 <div id="divDatDR" class="dataDR">**data**</div>
+                                 <div id="divTarDR" class="TrfsDR">**tars**</div>
+                                 <div class="ValTDR">
+                                    <span class="lbl">Total:</span>
+                                    <span id="spValVDR" class="val">**val**</span>
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <div class="subHeader">Dados Cliente</div>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td class="caixa">
+                                 <input id="nationality" class="tb len1" placeholder="nacionalidade" value="PT" />
+                                 <input id="firstName" class="tb len4" placeholder="primeiro nome" value="" />
+                                 <input id="lastName" class="tb len2" placeholder="apelido" value="" />
+                                 <input id="phone" class="tb len2" placeholder="nº telefone" value="" />
+                                 <input id="email" class="tb len5" placeholder="email" value="" />
+                                 <div class="tbw"><input id="hotel" class="tb len2 nofloat" placeholder="hotel" value="" /><input id="room" class="tb len2 nofloat" placeholder="room" value="" /></div>
+                                 <input id="contribuinte" class="tb len2" placeholder="contribuinte" value="" />
+                                 <input id="cpostal" class="tb len2" placeholder="cód. postal" value="" />
+                                 <input id="morada" class="tb len5" placeholder="morada" value="" />
+                             </td>
+                         </tr>
+                         <tr><td><div class="subHeader">Modo Pagamento</div></td></tr>
+                         <tr><td class="caixa"><div id="divModsPag" class="modsPag"></div></td></tr>
+                         <tr>
+                             <td align="center" style="text-align:center">
+                                 <input type="button" id="step_7" class="btnConfirm" value="CONFIRMAR" onclick="javascript:step7(false);" />
+                             </td>
+                         </tr>
+                     </table>
+                    <span id="spErroReserva" class="erroReserva">
+                        Não foi possivel efectuar a reserva<br/>
+                        <font id="fDescErroReserva"></font>
+                    </span>
+                 </td>
+             </tr>
+             <tr id="trPrint" style="display:none">
+                 <td class="area" valign="middle">
+                     <div class="btnImprimir_w btnImprimir" onclick="printTicketSlip();"><div>talão<br/>billhete(s)</div></div>
+                     <div class="btnImprimir_w btnImprimir" onclick="printTicketA4();"><div>billhete(s)<br/>A4</div></div>
+                     <div class="btnImprimir_w btnImprimir" onclick="printResumeA4();"><div>resumo<br/>A4</div></div>
+                     <div id="btnCheckin" class="btnBig centrar btnCheckin" onclick="step9();">EFECTUAR<br/>CHECKIN</div>
+                     <div id="btnNovaReserva" class="btnBig centrar btnNovaReserva" onclick="setStepState('D');">CRIAR<br/>NOVA<br/>RESERVA</div>
+                 </td>
+             </tr>
+             <tr id="trCheckinList" style="display:none">
+                 <td class="areaPosEmissao" valign="middle">
+                     <div class="checkinList_w">
+                         <table id="tblBookingTicketList" border="0" cellpadding="1" cellspacing="1" class="checkinList" align="center" width="100%">
+                             <tr class="hdrL">
+                                 <td width="8%" align="center">
+                                     <input type="checkbox" name="chkBilhetes" class="checkboxList" onclick="checkAllCIN(this)" />
+                                 </td>
+                                 <td width="30%" align="center">Nº BILHETE</td>
+                                 <td width="54%" align="center">PRODUTO</td>
+                                 <td width="8%" align="center"></td>
+                             </tr>
+                             <!--tr class="line0">
+                                 <td align="center">
+                                     <input type="checkbox" name="chkBilhete" class="checkboxList" onclick="checkAllCIN()" value="9999999" />
+                                 </td>
+                                 <td>
+                                     <span class="blh">7777777</span><br />
+                                     <span class="dt">(2 Fev às 11:00)</span>
+                                 </td>
+                                 <td><span class="prd">Viagem Teleferico</span></td>
+                                 <td><span class="st_em">&nbsp;</span></td>
+                             </tr-->
+                         </table>
+                     </div>
+                     <!----div class="lbl centrar"><span class="st_cl small"></span>&nbsp;CANCELADO</div-->
+                     <div class="lbl centrar"><span class="st_pc small"></span>&nbsp;POR EMITIR</div>
+                     <div class="lbl centrar"><span class="st_em small"></span>&nbsp;EMITIDO</div>
+                     <div class="lbl centrar"><span class="st_ck small"></span>&nbsp;EM CHECKIN</div>
 						</td>
 					</tr>
 				</table>
 			</div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
+            <iframe id="ifPrintTicketSlip" name="ifPrintTicketSlip" style="height: 0px; width: 0px; border: 0;"></iframe>
+            <iframe id="ifPrintTicketA4"   name="ifPrintTicketA4"   style="height: 0px; width: 0px; border: 0;"></iframe>
+            <iframe id="ifPrintResumeA4"   name="ifPrintResumeA4"  style="height: 0px; width: 0px; border: 0;"></iframe>
 
-            var value = window.localStorage.getItem("password");
-            if ((value != null) && (value != "")) {
-                document.getElementById('password').value = value;
-                gvPassword = value;
-                step1();
-            }
-        </script>
+            <script type="text/javascript" src="cordova.js"></script>
+            <script type="text/javascript" src="js/index.js"></script>
+            <script type="text/javascript">
+                app.initialize();
+
+                var value = window.localStorage.getItem("password");
+                if ((value != null) && (value != "")) {
+                    document.getElementById('password').value = value;
+                    gvPassword = value;
+                    step1();
+                }
+            </script>
+         </div> 
     </body>
 </html>
