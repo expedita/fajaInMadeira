@@ -1,0 +1,96 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta charset="iso-8859-15" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.css" />
+    <!-- script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script -->
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
+
+    <link href="./css/inmadeira.css" rel="stylesheet" />
+
+    <script language="javascript" type="text/javascript" src="./include/jquery/jquery-1.11.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./include/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./include/jquery/jquery-ui-1.7.2.custom.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./include/jquery/jquery.colorbox-min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./include/jquery/jquery.blockUI.js"></script>
+    <script language="javascript" type="text/javascript" src="./include/prototypes.js"></script>
+    <script language="javascript" type="text/javascript" src="./js/FajaBookt_checkin.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+        <div id="divMainForm" class="mainForm">
+            <table width="100%" cellpadding="0px" cellspacing="0px">
+                <tr>
+                    <td class="areaHeaderForm">
+                        <div class="header"></div>
+                        <div id="btnNovaReservaTop" class="btnBig centrar btnNovaReservaTop" onclick="javascript:document.location.href='./index.html';">RESERVAS</div>
+                    </td>
+                </tr>
+                <tr id="trAreaLogin">
+                    <td class="areaLogin" valign="middle">
+                        <input type="password" class="tb" value="faja">
+                        <input type="button" class="btn" onclick="javascript:step1();" value="LOGIN" />
+                        <div id="step1td" style="display:none"></div>
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr id="trCheckinListFilter" style="display:none">
+                    <td class="caixa areaPesq" valign="middle">
+                        <select id="ddDays" class="tb len1" value="1900-01-01"></select>
+                        <input id="bookingCode" class="tb len2" placeholder="id reserva" value="" />
+                        <input id="ticketNumber" class="tb len2" placeholder="nº bilhete" value="" />
+                        <input id="clienteName" class="tb len4" placeholder="nome cliente" value="" />
+                    </td>
+                </tr>
+                <tr id="trCheckinList" style="display:none">
+                    <td class="areaPesq" valign="middle">
+                        <input type="button" class="btnPesquisa" onclick="javascript:step8();" value="LISTAR" />
+                        <div id="btnCheckin" class="btnLong centrar btnLogCheckin" onclick="step9();">EFECTUAR CHECKIN</div>
+
+                        <div class="checkinList_w">
+                            <table id="tblBookingTicketList" border="0" cellpadding="1" cellspacing="1" class="checkinList" align="center" width="100%">
+                                <tr class="hdrL">
+                                    <td width="8%" align="center">
+                                        <input type="checkbox" name="chkBilhetes" class="checkboxList" onclick="checkAllCIN(this)" />
+                                    </td>
+                                    <td width="30%" align="center">Nº BILHETE</td>
+                                    <td width="54%" align="center">PRODUTO</td>
+                                    <td width="8%" align="center"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="lbl centrar"><span class="st_cl small"></span>&nbsp;CANCELADO</div>
+                        <div class="lbl centrar"><span class="st_pc small"></span>&nbsp;POR EMITIR</div>
+                        <div class="lbl centrar"><span class="st_em small"></span>&nbsp;EMITIDO</div>
+                        <div class="lbl centrar"><span class="st_ck small"></span>&nbsp;EM CHECKIN</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+
+            var value = window.localStorage.getItem("password");
+            if ((value != null) && (value != "")) {
+                document.getElementById('password').value = value;
+                gvPassword = value;
+                doPageOnload();
+            }
+        </script>
+    </div> 
+</body>
+</html>
